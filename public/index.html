@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Random Video & Text Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>🎥 Random Video & Text Chat</h2>
+
+  <p>
+    🟢 Online Users: <span id="online">0</span><br>
+    🌍 Country: <span id="country">Detecting...</span>
+  </p>
+
+  <!-- STATUS / PROGRESS -->
+  <p id="status" style="font-weight:bold;color:#ff9800;">
+    🔍 Finding new stranger...
+  </p>
+
+  <!-- VIDEO SECTION -->
+  <div class="videos">
+    <video id="localVideo" autoplay muted playsinline></video>
+    <video id="remoteVideo" autoplay playsinline></video>
+  </div>
+
+  <!-- CONTROLS -->
+  <div id="controls">
+    <button onclick="toggleCamera()">📷 Camera OFF</button>
+    <button onclick="nextUser()">🔄 Next</button>
+  </div>
+
+  <!-- CHAT SECTION -->
+  <div id="chat">
+    <div id="messages"></div>
+
+    <div style="display:flex;gap:5px;">
+      <input
+        type="text"
+        id="msg"
+        placeholder="Type your message..."
+        style="flex:1;"
+      >
+      <button onclick="sendMsg()">Send</button>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
